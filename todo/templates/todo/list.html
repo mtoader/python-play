@@ -1,0 +1,70 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <h1>List: {{ list.name }}</h1>
+{% endblock %}
+
+{% block main_content %}
+    <style type="text/css">
+        .due-on {
+            /*font-size: */
+        }
+    
+        .item .text.completed {
+            text-decoration: line-through;
+        }
+
+    </style>
+    <h3>Todo items:</h3>
+    <ol>
+    {% for item in items %}
+        <li class="item">
+            {% if item.completed %}
+            <div class="text completed">{{ item.text }}</div>
+            {% else %}
+            <div class="text ">{{ item.text }}</div>
+            {% endif %}
+
+            {% if item.priority or item.due_on or item.started_on %}
+                <dl>
+                    {% if item.priority %}
+                        <dt>Priority:</dt>
+                        <dd>
+                        {% if item.priority == 'A' %}
+                            <span class="label important">{{ item.priority }}</span>
+                        {% endif %}
+                        {% if item.priority == 'B' %}
+                            <span class="label warning">{{ item.priority }}</span>
+                        {% endif %}
+                        {% if item.priority == 'C' %}
+                            <span class="label notice">{{ item.priority }}</span>
+                        {% endif %}
+                        </dd>
+                    {% endif %}
+
+                    {% if item.due_on %}
+                        <dt>Due date:</dt>
+                        <dd><span class="small due-on">{{ item.due_on }}</span></dd>
+                    {% endif %}
+
+                    {% if item.started_on %}
+                        <dt>Start date:</dt>
+                        <dd><span class="small due-on">{{ item.started_on }}</span></dd>
+                    {% endif %}
+                </dl>
+            {% endif %}
+        </li>
+    {% endfor %}
+    <ol>
+
+{% endblock %}
+
+{% block secondary_content %}
+    <form method="post" class="form-stacked" action="/lists/delete">
+        <div class="actions">
+            <input type="hidden" value="{{ list.id }}" name="id"/>
+            {% csrf_token %}
+            <button type="submit" class="btn danger">Delete this list</button>
+        </div>
+    </form>
+{% endblock %}

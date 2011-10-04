@@ -29,5 +29,6 @@ class Item(models.Model):
     def __unicode__(self):
         return self.text
 
+    
     class Meta:
         order_with_respect_to = 'list'

@@ -13,6 +13,9 @@ urlpatterns = patterns('',
     url(r'^accounts/login/?$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/?$', 'django.contrib.auth.views.logout'),
     url(r'^lists/?$', 'todo.views.lists'),
+    url(r'^lists/new?$', 'todo.views.list_new'),
+    url(r'^lists/(?P<list_id>\d+)/?$', 'todo.views.list'),
+    url(r'^lists/delete', 'todo.views.list_delete'),
     url(r'^$', 'todo.views.lists'),
 )
 
