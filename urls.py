@@ -16,4 +16,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^api/', include('todo.api.urls')),
+
+    url(r'^', include('todo.urls')),
 )
