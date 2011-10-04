@@ -1,0 +1,19 @@
+{% if user.is_authenticated %}
+    <ul class="nav secondary-nav">
+        <li class="dropdown">
+            <a class="dropdown-toggle">Welcome {{ user.username }}</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="/accounts/logout">Logout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+{% else %}
+    <form action="/accounts/login" class="pull-right" method="post">
+      <input class="input-small" type="text" name="username" placeholder="Username">
+      <input class="input-small" type="password" name="password" placeholder="Password">
+      <button class="btn" type="submit">Sign in</button>
+      {% csrf_token %}
+    </form>
+{% endif %}
