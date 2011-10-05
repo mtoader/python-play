@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^lists/new?$', 'todo.views.list_new'),
     url(r'^lists/(?P<list_id>\d+)/?$', 'todo.views.list'),
     url(r'^lists/delete', 'todo.views.list_delete'),
+    url(r'^lists/rename', 'todo.views.list_rename'),
     url(r'^$', 'todo.views.lists'),
 )
 

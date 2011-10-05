@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <h1>List: {{ list.name }}</h1>
+{% endblock %}
+
+{% block main_content %}
+    {% if form.errors %}
+        <div class="alert-message error"><p>Invalid parameters.</p></div>
+    {% endif %}
+
+    <form method="post">
+
+        <fieldset>
+            <legend>Please provide the list name</legend>
+        </fieldset>
+        <div class="clearfix">
+            <label for="name">{{ form.name.label }}:</label>
+
+            <div class="input">
+                <input class="xLarge" name="name" id="name" size="30" type="text" value="{{ form.name.value }}"/>
+            </div>
+        </div>
+        <div class="actions"><input type="submit" value="Create list" class="btn primary"/></div>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}
+
+{% block secondary_content %}
+
+    
+{% endblock %}

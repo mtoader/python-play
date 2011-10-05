@@ -15,6 +15,8 @@
         }
 
     </style>
+
+    {% if items %}
     <h3>Todo items:</h3>
     <ol>
     {% for item in items %}
@@ -55,11 +57,31 @@
             {% endif %}
         </li>
     {% endfor %}
-    <ol>
+    </ol>
+    {% else %}
+    <h3>Hurray ! Your list is empty.</h3>
+    <p>Enjoy it while it lasts!</p>
+    {% endif %}
+
+    <form method="post" class="form-stacked" action="/lists/{{ list.id }}/items/new">
+        <div class="actions">
+            <input type="hidden" value="{{ list.id }}" name="id"/>
+            {% csrf_token %}
+            <button type="submit" class="btn info">Add Item</button>
+        </div>
+    </form>
 
 {% endblock %}
 
 {% block secondary_content %}
+    <form method="get" class="form-stacked" action="/lists/rename">
+        <div class="actions">
+            <input type="hidden" value="{{ list.id }}" name="id"/>
+            <input type="hidden" value="{{ list.name }}" name="name"/>
+            {% csrf_token %}
+            <button type="submit" class="btn info">Rename</button>
+        </div>
+    </form>
     <form method="post" class="form-stacked" action="/lists/delete">
         <div class="actions">
             <input type="hidden" value="{{ list.id }}" name="id"/>
