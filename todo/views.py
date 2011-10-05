@@ -133,5 +133,30 @@ def item_new(request, list_id=None):
     except Exception as e:
         return redirect('todo.views.lists')
 
+@login_required()
+def item_edit(request, list_id = None, item_id = None):
+
+    if list_id is None or item_id is None:
+        return redirect('todo.views.lists')
+
+    try:
+        list = List.objects.filter(user=request.user).get(pk=list_id)
+        item = Item.objects.filter(list = list).get(pk=item_id)
+    except Exception:
+        return redirect('todo.views.lists')
 
 
+@login_required()
+def item_delete(request, list_id = None, item_id = None):
+
+    if list_id is None or item_id is None:
+        return redirect('todo.views.lists')
+
+    try:
+        list = List.objects.filter(user=request.user).get(pk=list_id)
+        item = Item.objects.filter(list = list).get(pk=item_id)
+        item.delete()
+        return redirect('/lists/%d/' % list.id)
+    
+    except Exception:
+        return redirect('todo.views.lists')

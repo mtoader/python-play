@@ -18,43 +18,49 @@
 
     {% if items %}
     <h3>Todo items:</h3>
+    <p>Hover over the items to change them:</p>
     <ol>
     {% for item in items %}
         <li class="item">
-            {% if item.completed %}
-            <div class="text completed">{{ item.text }}</div>
+            <div class="block-message info">{% if item.completed %}
+                <div class="text completed">{{ item.text }}</div>
             {% else %}
-            <div class="text ">{{ item.text }}</div>
+                <div class="text ">{{ item.text }}</div>
             {% endif %}
 
-            {% if item.priority or item.due_on or item.started_on %}
-                <dl>
-                    {% if item.priority %}
-                        <dt>Priority:</dt>
-                        <dd>
-                        {% if item.priority == 'A' %}
-                            <span class="label important">{{ item.priority }}</span>
+                {% if item.priority or item.due_on or item.started_on %}
+                    <dl>
+                        {% if item.priority %}
+                            <dt>Priority:</dt>
+                            <dd>
+                                {% if item.priority == 'A' %}
+                                    <span class="label important">{{ item.priority }}</span>
+                                {% endif %}
+                                {% if item.priority == 'B' %}
+                                    <span class="label warning">{{ item.priority }}</span>
+                                {% endif %}
+                                {% if item.priority == 'C' %}
+                                    <span class="label notice">{{ item.priority }}</span>
+                                {% endif %}
+                            </dd>
                         {% endif %}
-                        {% if item.priority == 'B' %}
-                            <span class="label warning">{{ item.priority }}</span>
-                        {% endif %}
-                        {% if item.priority == 'C' %}
-                            <span class="label notice">{{ item.priority }}</span>
-                        {% endif %}
-                        </dd>
-                    {% endif %}
 
-                    {% if item.due_on %}
-                        <dt>Due date:</dt>
-                        <dd><span class="small due-on">{{ item.due_on }}</span></dd>
-                    {% endif %}
+                        {% if item.due_on %}
+                            <dt>Due date:</dt>
+                            <dd><span class="small due-on">{{ item.due_on }}</span></dd>
+                        {% endif %}
 
-                    {% if item.started_on %}
-                        <dt>Start date:</dt>
-                        <dd><span class="small due-on">{{ item.started_on }}</span></dd>
-                    {% endif %}
-                </dl>
-            {% endif %}
+                        {% if item.started_on %}
+                            <dt>Start date:</dt>
+                            <dd><span class="small due-on">{{ item.started_on }}</span></dd>
+                        {% endif %}
+                    </dl>
+                {% endif %}
+                <div class="alert-actions" style="display: none;">
+                    <a href="/lists/{{ list.id }}/items/{{ item.id }}/edit" class="btn small">Edit</a>
+                    <a href="/lists/{{ list.id }}/items/{{ item.id }}/delete" class="btn small">Delete</a>
+                </div>
+            </div>
         </li>
     {% endfor %}
     </ol>
@@ -69,6 +75,20 @@
         </div>
     </form>
 
+    <script type="text/javascript">
+        $(function(){
+            $("ol > li.item").hover(
+                    function(event){
+                        $(this).addClass("alert-message");
+                        $(this).find("div.alert-actions").show();
+                    },
+                    function(event){
+                        $(this).removeClass("alert-message");
+                        $(this).find("div.alert-actions").hide();
+                    }
+            )
+        });
+    </script>
 {% endblock %}
 
 {% block secondary_content %}

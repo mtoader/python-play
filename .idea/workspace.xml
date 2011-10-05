@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d0d8e2-c74d-4d0a-b95b-f86f9ac64660" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo/templates/todo/item_new.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/forms.py" afterPath="$PROJECT_DIR$/todo/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout/base.html" afterPath="$PROJECT_DIR$/templates/layout/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/templates/todo/list.html" afterPath="$PROJECT_DIR$/todo/templates/todo/list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/urls.py" afterPath="$PROJECT_DIR$/todo/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/views.py" afterPath="$PROJECT_DIR$/todo/views.py" />
@@ -34,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="37" selection-start="2892" selection-end="2892" vertical-scroll-proportion="0.0">
+            <state line="142" column="4" selection-start="4115" selection-end="4115" vertical-scroll-proportion="0.56747407">
               <folding />
             </state>
           </provider>
@@ -52,19 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorators.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="748" selection-end="748" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_new.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="item_new.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo/templates/todo/item_new.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.38277513">
+            <state line="3" column="21" selection-start="74" selection-end="74" vertical-scroll-proportion="-1.9565217">
               <folding />
             </state>
           </provider>
@@ -109,7 +99,16 @@
       <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo/templates/todo/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="29" selection-start="2166" selection-end="2166" vertical-scroll-proportion="-39.304348">
+            <state line="59" column="0" selection-start="2166" selection-end="2166" vertical-scroll-proportion="-18.913044">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="0" selection-start="2110" selection-end="2110" vertical-scroll-proportion="-26.347826">
               <folding />
             </state>
           </provider>
@@ -118,7 +117,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="629" selection-end="759" vertical-scroll-proportion="0.0">
+            <state line="16" column="70" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,15 +145,15 @@
         <option value="$PROJECT_DIR$/templates/registration/logged_out.html" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/todo/models.py" />
-        <option value="$PROJECT_DIR$/templates/layout/base.html" />
         <option value="$PROJECT_DIR$/todo/templates/todo/list_new.html" />
         <option value="$PROJECT_DIR$/todo/templates/todo/lists.html" />
         <option value="$PROJECT_DIR$/todo/templates/todo/list_edit.html" />
-        <option value="$PROJECT_DIR$/todo/urls.py" />
-        <option value="$PROJECT_DIR$/todo/templates/todo/list.html" />
-        <option value="$PROJECT_DIR$/todo/views.py" />
         <option value="$PROJECT_DIR$/todo/forms.py" />
         <option value="$PROJECT_DIR$/todo/templates/todo/item_new.html" />
+        <option value="$PROJECT_DIR$/templates/layout/base.html" />
+        <option value="$PROJECT_DIR$/todo/templates/todo/list.html" />
+        <option value="$PROJECT_DIR$/todo/urls.py" />
+        <option value="$PROJECT_DIR$/todo/views.py" />
       </list>
     </option>
   </component>
@@ -486,7 +485,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22358723" sideWeight="0.7583519" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24164811" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24164811" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39420936" sideWeight="0.502457" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56681514" sideWeight="0.492629" order="3" side_tool="false" content_ui="tabs" />
@@ -532,7 +531,7 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="List deletion and rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented add new item" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -549,18 +548,12 @@
     <MESSAGE value="Added bootstrap based ui framework.&#10;Added user login/logout functionality to the ui. (complete the commit)" />
     <MESSAGE value="Added list display and implemented list deletion" />
     <MESSAGE value="List deletion and rename" />
+    <MESSAGE value="Implemented add new item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/todo/templates/todo/lists.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo/templates/todo/list_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="19" selection-start="72" selection-end="72" vertical-scroll-proportion="-1.9565217">
@@ -631,27 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="629" selection-end="759" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo/templates/todo/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="29" selection-start="2166" selection-end="2166" vertical-scroll-proportion="-39.304348">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="37" selection-start="2892" selection-end="2892" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="4" selection-start="899" selection-end="899" vertical-scroll-proportion="0.0">
@@ -661,7 +633,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/todo/templates/todo/item_new.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.38277513">
+        <state line="3" column="21" selection-start="74" selection-end="74" vertical-scroll-proportion="-1.9565217">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="2110" selection-end="2110" vertical-scroll-proportion="-26.347826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo/templates/todo/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="0" selection-start="2166" selection-end="2166" vertical-scroll-proportion="-18.913044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="70" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="4" selection-start="4115" selection-end="4115" vertical-scroll-proportion="0.56747407">
           <folding />
         </state>
       </provider>
