@@ -63,10 +63,8 @@
     <p>Enjoy it while it lasts!</p>
     {% endif %}
 
-    <form method="post" class="form-stacked" action="/lists/{{ list.id }}/items/new">
+    <form method="get" class="form-stacked" action="/lists/{{ list.id }}/items/new">
         <div class="actions">
-            <input type="hidden" value="{{ list.id }}" name="id"/>
-            {% csrf_token %}
             <button type="submit" class="btn info">Add Item</button>
         </div>
     </form>
