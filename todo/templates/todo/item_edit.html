@@ -1,0 +1,67 @@
+{% extends 'layout/base.html' %}
+
+{% block header %}
+    <h1>New item</h1>
+{% endblock %}
+
+{% block main_content %}
+
+    <div class="alert-message block-message warning">
+        <p>Enter below your todo item information. Only the <strong>Text</strong> field is required.</p>
+        <br/>
+        <p>The <strong>Due date</strong> and <strong>Start date</strong> should look like this: <strong>Oct 05, 2011 06:07 AM</strong>.</p>
+    </div>
+    {% if form.errors %}
+        <div class="alert-message error"><p>Invalid parameters.</p></div>
+    {% endif %}
+
+    <form method="post">
+
+        <fieldset>
+            <legend>Please provide the list name</legend>
+        </fieldset>
+        <div class="clearfix">
+            <label for="text">{{ form.text.label }}:</label>
+
+            <div class="input">
+                {{ form.text }}
+            </div>
+        </div>
+        <div class="clearfix">
+            <label for="due_on">{{ form.due_on.label }}:</label>
+
+            <div class="input">
+                {{ form.due_on }}
+            </div>
+        </div>
+        <div class="clearfix">
+            <label for="started_on">{{ form.started_on.label }}:</label>
+
+            <div class="input">
+                {{ form.started_on }}
+            </div>
+        </div>
+        <div class="clearfix">
+            <label for="priority">{{ form.priority.label }}:</label>
+
+            <div class="input">
+                {{ form.priority }}
+            </div>
+        </div>
+        <div class="clearfix">
+            <label for="completed">{{ form.completed.label }}:</label>
+
+            <div class="input">
+                {{ form.completed }}
+            </div>
+        </div>
+        <div class="actions"><input type="submit" value="Update item" class="btn primary"/></div>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}
+
+{% block secondary_content %}
+
+    
+{% endblock %}

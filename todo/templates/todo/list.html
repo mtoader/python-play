@@ -30,7 +30,7 @@
 
                 {% if item.priority or item.due_on or item.started_on %}
                     <dl>
-                        {% if item.priority %}
+                        {% if item.priority and item.priority != ' ' %}
                             <dt>Priority:</dt>
                             <dd>
                                 {% if item.priority == 'A' %}

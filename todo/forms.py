@@ -28,7 +28,31 @@ class CreateItemForm(forms.Form):
     
     priority = forms.ChoiceField(required=False,
         choices=(
-                (None, 'No priority'),
+                (' ', 'No priority'),
+                ('A', 'Urgent and Important'),
+                ('B', 'Important but Not Urgent'),
+                ('C', 'Neither Urgent nor Important')
+            )
+    )
+    completed = forms.BooleanField(required=False)
+
+class EditItemForm(forms.Form):
+    text = forms.CharField(max_length=256, min_length=1, required=True, widget=forms.Textarea({'rows':3}))
+    due_on = forms.DateTimeField(
+        required=False,
+        input_formats=('%b %d, %Y %H:%M %p',),
+        widget=forms.DateTimeInput(format='%b %d, %Y %H:%M %p')
+    )
+
+    started_on = forms.DateTimeField(
+        required=False,
+        input_formats=('%b %d, %Y %H:%M %p',),
+        widget=forms.DateTimeInput(format='%b %d, %Y %H:%M %p')
+    )
+
+    priority = forms.ChoiceField(required=False,
+        choices=(
+                (' ', 'No priority'),
                 ('A', 'Urgent and Important'),
                 ('B', 'Important but Not Urgent'),
                 ('C', 'Neither Urgent nor Important')

@@ -3,7 +3,7 @@ import datetime
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, redirect
 from django.template.context import RequestContext
-from todo.forms import DeleteListForm, CreateListForm, EditListForm, CreateItemForm
+from todo.forms import DeleteListForm, CreateListForm, EditListForm, CreateItemForm, EditItemForm
 from todo.models import List, Item
 
 @login_required()
@@ -133,6 +133,7 @@ def item_new(request, list_id=None):
     except Exception as e:
         return redirect('todo.views.lists')
 
+
 @login_required()
 def item_edit(request, list_id = None, item_id = None):
 
@@ -142,6 +143,33 @@ def item_edit(request, list_id = None, item_id = None):
     try:
         list = List.objects.filter(user=request.user).get(pk=list_id)
         item = Item.objects.filter(list = list).get(pk=item_id)
+
+        form = EditItemForm({
+            'text' : item.text,
+            'due_on' : item.due_on,
+            'started_on' : item.started_on,
+            'completed' : item.completed,
+            'priority' : item.priority
+        })
+
+        if request.method == 'POST':
+            form = EditItemForm(request.POST)
+            if form.is_valid():
+                item.text = form.cleaned_data['text']
+                item.due_on = form.cleaned_data['due_on']
+                item.started_on = form.cleaned_data['started_on']
+                item.priority = form.cleaned_data['priority']
+                item.completed = form.cleaned_data['completed']
+                item.save()
+                return redirect('/lists/%d/' % list.id )
+
+        return render_to_response(
+            'todo/item_edit.html',
+                {
+                    'form': form
+                },
+            context_instance=RequestContext(request))
+
     except Exception:
         return redirect('todo.views.lists')
 

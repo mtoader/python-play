@@ -17,8 +17,9 @@ class Item(models.Model):
     started_on = models.DateField(blank=True, null=True)
     priority = models.CharField(
         max_length=1,
-        blank=True,
+        default=' ',
         choices=(
+                (' ', 'No priority'),
                 ('A', 'Urgent and Important'),
                 ('B', 'Important but Not Urgent'),
                 ('C', 'Neither Urgent nor Important')
